@@ -14,5 +14,17 @@
 # language governing permissions and limitations under the License.
 
 # Updated monthly, see HackerNewsCli.hiring docstring.
-who_is_hiring_post_id = 16492994
+
+from  lib.haxorScraper.google_scrape_id import google_scrape_id
+
+hiring_post_id = google_scrape_id("who is hiring","april",2018)
+
+"""
+Due to less time, this script has its limitation or call the design is flawed 
+flaw is - I am not checking for month which is greater than current month in that 
+case the script just fires.
+
+"""
+print(hiring_post_id)
+who_is_hiring_post_id = hiring_post_id
 freelancer_post_id = 16492995
