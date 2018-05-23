@@ -16,6 +16,7 @@
 import pip
 import pexpect
 from tests.compat import unittest
+import  pkg_resources
 
 
 class CliTest(unittest.TestCase):

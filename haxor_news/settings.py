@@ -16,15 +16,25 @@
 # Updated monthly, see HackerNewsCli.hiring docstring.
 
 from  lib.haxorScraper.google_scrape_id import google_scrape_id
+from datetime import  datetime
 
-hiring_post_id = google_scrape_id("who is hiring","april",2018)
+nowtime = datetime.now()
+current_month =  nowtime.strftime("%b")
+current_year = nowtime.year
+
+hiring_post_id = google_scrape_id("who is hiring", month= current_month, year= current_year, class_name= "hJND5c", section= "div")
+freelancer_post_id= google_scrape_id(word= "hackernews freelancer", month= current_month,
+                                     year= current_year, class_name= "hJND5c", section= "div")
 
 """
 Due to less time, this script has its limitation or call the design is flawed 
 flaw is - I am not checking for month which is greater than current month in that 
-case the script just fires.
+case the script just back fires.
 
 """
 print(hiring_post_id)
+print freelancer_post_id
+print current_month
+
 who_is_hiring_post_id = hiring_post_id
-freelancer_post_id = 16492995
+freelancer_post_id = freelancer_post_id

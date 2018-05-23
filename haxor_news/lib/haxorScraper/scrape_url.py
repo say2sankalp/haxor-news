@@ -13,15 +13,15 @@ from datetime import  datetime
 
 class ScrapeUrl():
 
-    def __init__(self, word2search="who is hiring", month_name= "april", year= 2018):
-        self.baseUrl        = "https://www.google.co.in/search?num=1&q="
-        self.word2search    = str(word2search)
+    def __init__(self, word2search="hackernews who is hiring", month_name= "april", year= 2018):
+        self.baseUrl = "https://www.google.co.in/search?num=1&q="
+        self.word2search = str(word2search)
         self.month = str(month_name)
-        self.year           = str(year)
+        self.year = str(year)
 
     def validation(self):
         current_month = datetime.today().month
-        if str.isnumeric(self.year) and (not self.month is  ["",None]):
+        if str.isdigit(self.year) and (not self.month is  ["",None]):
             self.hn_url = self.baseUrl+self.word2search.replace(" ","+")+self.month+self.year
             return True
         else:
